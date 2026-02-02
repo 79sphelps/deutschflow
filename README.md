@@ -5,20 +5,20 @@ DeutschFlow provides structured German lessons, vocabulary, practice exercises, 
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 Custom authentication (signup, signin, signout)
-- 🧠 Structured lessons with vocabulary & practice exercises
-- 📊 Per-user progress tracking (lesson + exercise level)
-- 🏆 Achievements, streaks, and completion tracking
-- 🎯 Practice scoring & completion feedback
-- 📈 Progress dashboard with charts
-- 📱 Fully responsive (mobile-first UX)
-- ⚡ Server Components + Client Hooks (Next.js 16 compatible)
+- Custom authentication (signup, signin, signout)
+- Structured lessons with vocabulary & practice exercises
+- Per-user progress tracking (lesson + exercise level)
+- Achievements, streaks, and completion tracking
+- Practice scoring & completion feedback
+- Progress dashboard with charts
+- Fully responsive (mobile-first UX)
+- Server Components + Client Hooks (Next.js 16 compatible)
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 **Frontend**
 - Next.js 16 (App Router)
@@ -40,7 +40,7 @@ DeutschFlow provides structured German lessons, vocabulary, practice exercises, 
 
 ---
 
-## 🧩 Architecture Highlights
+## Architecture Highlights
 
 - **Protected routes** using server-side auth checks
 - **Clean API layer** decoupled from UI components
