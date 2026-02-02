@@ -1,4 +1,4 @@
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
 import type { Metadata } from "next";
 import PageWrapper from "@/app/PageWrapper";
 // import { getLessons } from "@/lib/api";
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 export default async function LearnPage() {
   // const lessons = await getLessons();
-  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  // const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  const lessons: Lesson[] = await getLessonsFromDB();
 
   if (lessons.length === 0) {
     return (

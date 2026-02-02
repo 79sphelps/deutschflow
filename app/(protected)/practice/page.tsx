@@ -1,12 +1,13 @@
 // import { getLessons } from "@/lib/api";
 import { getLessonsFromDB } from "@/lib/db/lessons";
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
 import PageWrapper from "@/app/PageWrapper";
 import LessonCard from "@/components/lessons/LessonCard";
 
 export default async function PracticePage() {
   // const lessons = await getLessons();
-  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  // const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  const lessons: Lesson[] = await getLessonsFromDB();
 
   return (
     <PageWrapper>

@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
 import { MongoClient, Db } from "mongodb";
 
 export async function GET() {

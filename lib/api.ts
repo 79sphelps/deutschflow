@@ -1,4 +1,19 @@
 import { getBaseUrl } from "./getBaseUrl";
+import { LessonProgress } from "@/types/progress";
+import { ApiResponse } from "@/types/api";
+
+export async function getUserProgress(): Promise<LessonProgress[]> {
+  const res = await fetch("/api/progress", {
+    credentials: "include",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch progress");
+  }
+
+  const json: ApiResponse<LessonProgress[]> = await res.json();
+  return json.data;
+}
 
 export async function getLessons() {
   const baseUrl: string = await getBaseUrl();

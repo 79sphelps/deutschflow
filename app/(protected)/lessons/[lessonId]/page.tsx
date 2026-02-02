@@ -1,8 +1,8 @@
 // import { getLesson } from "@/lib/api";
 import { getLessonFromDB } from "@/lib/db/lessons";
 import { getAllVocabularyFromDB } from "@/lib/db/vocabulary";
-import { Lesson } from "@/lib/data/lessons";
-import { Vocabulary } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
+import { Vocabulary } from "@/types/vocabulary";
 import LessonDetailClient from "./LessonDetailClient";
 
 export default async function LessonDetailPage({

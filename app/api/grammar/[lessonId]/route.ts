@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import { MongoClient, Db } from "mongodb";
-import { Grammar } from "@/lib/data/grammar";
+import { Grammar } from "@/types/grammar";
 
 export async function GET(
   _req: Request,

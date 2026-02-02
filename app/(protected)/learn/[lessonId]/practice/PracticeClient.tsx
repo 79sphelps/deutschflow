@@ -2,7 +2,7 @@
 
 import { useLessonProgress } from "@/hooks/useLessonProgress";
 import { useState } from "react";
-import { Exercise, Exercises } from "@/lib/data/exercises";
+import { Exercise, Exercises } from "@/types/exercises";
 import PageWrapper from "@/app/PageWrapper";
 import useSound from "use-sound";
 import confetti from "canvas-confetti";

@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import { MongoClient, Db } from "mongodb";
-import { Exercise } from "@/lib/data/exercises";
+import { Exercise } from "@/types/exercises";
 
 export async function GET(
   _req: Request,

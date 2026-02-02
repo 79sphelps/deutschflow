@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 import { MongoClient, Db } from "mongodb";
-import { Vocabulary } from "@/lib/data/lessons";
+import { Vocabulary } from "@/types/vocabulary";
 
 export async function GET() {
   try {

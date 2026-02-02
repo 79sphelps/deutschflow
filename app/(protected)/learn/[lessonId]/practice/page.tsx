@@ -1,7 +1,7 @@
 // import { getExercises } from "@/lib/api";
 import { getExercisesFromDB } from "@/lib/db/exercises";
 import PracticeClient from "./PracticeClient";
-import { Exercise } from "@/lib/data/exercises";
+import { Exercise } from "@/types/exercises";
 
 export default async function PracticePage({
   params,

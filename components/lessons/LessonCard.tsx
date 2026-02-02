@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
 
 export default function LessonCard({
   lesson,

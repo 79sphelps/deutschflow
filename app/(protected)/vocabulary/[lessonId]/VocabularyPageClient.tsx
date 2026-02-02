@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Vocabulary } from "@/lib/data/lessons";
+import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
 
 export default function VocabularyPageClient({

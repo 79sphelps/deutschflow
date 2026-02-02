@@ -1,6 +1,6 @@
 import { getAllVocabulary } from "@/lib/api";
 import VocabularyPageClient from "./VocabularyPageClient";
-import { Vocabulary } from "@/lib/data/lessons";
+import { Vocabulary } from "@/types/vocabulary";
 
 export default async function VocabularyPage({
   params,

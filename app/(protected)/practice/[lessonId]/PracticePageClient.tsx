@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Lesson, Vocabulary } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
+import { Vocabulary } from "@/types/vocabulary";
 import Link from "next/link";
 import PageWrapper from "@/app/PageWrapper";
 

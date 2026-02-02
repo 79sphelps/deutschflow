@@ -1,6 +1,7 @@
 "use client";
 
-import { Vocabulary, Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
+import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
 
 export default function LessonDetailClient({

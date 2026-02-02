@@ -1,11 +1,12 @@
 // import { getLessons } from "@/lib/api";
 import { getLessonsFromDB } from "@/lib/db/lessons";
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
 import PageWrapper from "@/app/PageWrapper";
 import LessonCard from "@/components/lessons/LessonCard";
 
 export default async function VocabularyPage() {
-  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  // const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  const lessons: Lesson[] = await getLessonsFromDB();
   return (
     <PageWrapper>
       <section className="space-y-6 border-blue-600 border-2 flex flex-col justify-center items-center p-5 rounded-2xl">

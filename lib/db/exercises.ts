@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { MongoClient, Db } from "mongodb";
-import { Exercise } from "@/lib/data/exercises";
+import { Exercise } from "@/types/exercises";
 
 export async function getExercisesFromDB(lessonId: string) {
   const client: MongoClient = await clientPromise;

@@ -6,9 +6,10 @@ import { Progress } from "@/hooks/useLessonProgress";
 import { User } from "@/hooks/useUser";
 
 export default async function DashboardPage() {
+  // ToDo - Offload this logic
   const user: User = await getUserFromSession() as unknown as User;
   if (!user) redirect("/signin");
-
+  
   const client: MongoClient = await clientPromise;
   const db: Db = client.db();
 
@@ -25,7 +26,10 @@ export default async function DashboardPage() {
         </button>
       </form>
       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-4">
-        Your Progress
+        Welcome, { user.name }
+      </h1>
+      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-4">
+        Here is Your Progress
       </h1>
       {progress.map((p) => (
         <div key={p.lessonId} className="border p-4 mb-2 rounded">

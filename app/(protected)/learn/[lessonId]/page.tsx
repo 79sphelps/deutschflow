@@ -2,7 +2,7 @@
 import { getLessonFromDB } from "@/lib/db/lessons";
 import Link from "next/link";
 import PageWrapper from "@/app/PageWrapper";
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson } from "@/types/lessons";
 
 export default async function LearnLessonPage({
   params,
