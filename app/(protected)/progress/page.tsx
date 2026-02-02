@@ -6,18 +6,22 @@ import PageWrapper from "@/app/PageWrapper";
 import { getUserFromSession } from "@/lib/auth";
 import clientPromise from "@/lib/mongodb";
 import { redirect } from "next/navigation";
+import { User } from "@/hooks/useUser";
+// import { ObjectId } from "mongodb";
+import { MongoClient, Db } from "mongodb";
+import { Progress } from "@/hooks/useLessonProgress";
 
 export default async function ProgressPage() {
-  const lessons = (await getLessonsFromDB()) as Lesson[];
-  const user = await getUserFromSession();
-  
+  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
+  const user: User = await getUserFromSession() as unknown as User;
+
   if (!user) redirect("/signin");
 
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   const progress = await db
-    .collection("lessonProgress")
+    .collection<Progress>("lessonProgress")
     .find({ userId: user._id })
     .toArray();
 

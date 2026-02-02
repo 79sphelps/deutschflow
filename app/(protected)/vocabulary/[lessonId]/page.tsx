@@ -1,5 +1,6 @@
 import { getAllVocabulary } from "@/lib/api";
 import VocabularyPageClient from "./VocabularyPageClient";
+import { Vocabulary } from "@/lib/data/lessons";
 
 export default async function VocabularyPage({
   params,
@@ -7,10 +8,10 @@ export default async function VocabularyPage({
   params: Promise<{ lessonId: string }>;
 }) {
   const { lessonId } = await params;
-  const allVocab = await getAllVocabulary();
+  const allVocab: Vocabulary[] = await getAllVocabulary() as unknown as Vocabulary[];
   return (
     <VocabularyPageClient
-      vocabulary={allVocab.filter((v: any) => v.lessonId === lessonId)}
+      vocabulary={allVocab.filter((v: Vocabulary) => v.lessonId === lessonId)}
     />
   );
 }

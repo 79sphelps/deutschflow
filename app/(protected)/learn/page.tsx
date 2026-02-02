@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default async function LearnPage() {
   // const lessons = await getLessons();
-  const lessons = (await getLessonsFromDB()) as Lesson[];
+  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
 
   if (lessons.length === 0) {
     return (

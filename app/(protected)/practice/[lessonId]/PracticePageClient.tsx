@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Lesson } from "@/lib/data/lessons";
+import { Lesson, Vocabulary } from "@/lib/data/lessons";
 import Link from "next/link";
 import PageWrapper from "@/app/PageWrapper";
 
@@ -10,7 +10,7 @@ export default function PracticePageClient({
   vocabulary,
 }: {
   lesson: Lesson;
-  vocabulary: any;
+  vocabulary: Vocabulary[];
 }) {
   const [index, setIndex] = useState(0);
   const [showBack, setShowBack] = useState(false);

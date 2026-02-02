@@ -2,7 +2,7 @@
 
 import { useLessonProgress } from "@/hooks/useLessonProgress";
 import { useState } from "react";
-import { Exercise, ExerciseOption } from "@/lib/data/exercises";
+import { Exercise, Exercises } from "@/lib/data/exercises";
 import PageWrapper from "@/app/PageWrapper";
 import useSound from "use-sound";
 import confetti from "canvas-confetti";
@@ -30,7 +30,7 @@ export default function PracticeClient({
   lessonId: string;
   exercise: Exercise;
 }) {
-  const exercises = exercise.exercises;
+  const exercises: Exercises[] = exercise.exercises;
   const { saveProgress, loading } = useLessonProgress(lessonId);
 
   const [answers, setAnswers] = useState<AnswerMap>({});

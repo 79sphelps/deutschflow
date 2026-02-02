@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
-// import { ObjectId } from "mongodb";
+import { MongoClient, Db } from "mongodb";
+// import { Progress } from "@/hooks/useLessonProgress";
+import { User } from "@/hooks/useUser";
 
 export async function POST(req: Request) {
   const { email, password } = await req.json();
@@ -11,10 +13,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing credentials" }, { status: 400 });
   }
 
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   const user = await db.collection("users").findOne({ email });
+
   if (!user) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }

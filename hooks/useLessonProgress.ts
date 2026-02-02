@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-type Progress = {
+export type Progress = {
   lessonId: string;
   completed: boolean;
   score: number;
@@ -24,7 +24,10 @@ export function useLessonProgress(lessonId: string) {
           setProgress(await res.json());
           return;
         }
-      } catch {}
+      } catch (e) {
+        console.error("There was an error fetching progress data: ", e);
+        throw e;
+      }
 
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return;

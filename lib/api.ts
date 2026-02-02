@@ -1,7 +1,7 @@
 import { getBaseUrl } from "./getBaseUrl";
 
 export async function getLessons() {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/lessons`, {
     cache: "no-store",
@@ -15,7 +15,7 @@ export async function getLessons() {
 }
 
 export async function getLesson(id: string) {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/lesson/${id}`, {
     cache: "no-store",
@@ -28,7 +28,7 @@ export async function getLesson(id: string) {
 }
 
 export async function getExercises(lessonId: string) {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/exercises/${lessonId}`, {
     cache: "no-store",
@@ -42,7 +42,7 @@ export async function getExercises(lessonId: string) {
 }
 
 export async function getGrammar(lessonId: string) {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/grammar/${lessonId}`, {
     cache: "no-store",
@@ -56,7 +56,7 @@ export async function getGrammar(lessonId: string) {
 }
 
 export async function getVocabulary(lessonId: string) {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/vocabulary/${lessonId}`, {
     cache: "no-store",
@@ -70,7 +70,7 @@ export async function getVocabulary(lessonId: string) {
 }
 
 export async function getAllVocabulary() {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/vocabulary`, {
     cache: "no-store",
@@ -84,7 +84,7 @@ export async function getAllVocabulary() {
 }
 
 export async function getProgress(lessonId: string) {
-  const baseUrl = await getBaseUrl();
+  const baseUrl: string = await getBaseUrl();
 
   const res = await fetch(`${baseUrl}/api/progress/${lessonId}`, {
     cache: "no-store",

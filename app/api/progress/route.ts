@@ -1,6 +1,8 @@
 import clientPromise from "@/lib/mongodb";
 import { getUserFromSession } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import { MongoClient, Db } from "mongodb";
+import { Progress } from "@/hooks/useLessonProgress";
 
 export async function POST(req: Request) {
   const user = await getUserFromSession();
@@ -9,10 +11,10 @@ export async function POST(req: Request) {
 
   const { lessonId, score, completed } = await req.json();
 
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
-  await db.collection("lessonProgress").updateOne(
+  await db.collection<Progress>("lessonProgress").updateOne(
     { userId: user._id, lessonId },
     {
       $set: {

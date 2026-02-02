@@ -6,7 +6,7 @@ import LessonCard from "@/components/lessons/LessonCard";
 
 export default async function PracticePage() {
   // const lessons = await getLessons();
-  const lessons = (await getLessonsFromDB()) as Lesson[];
+  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
 
   return (
     <PageWrapper>
@@ -15,7 +15,7 @@ export default async function PracticePage() {
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold">
             Practice
           </h1>
-          {lessons.map((item, idx) => (
+          {lessons.map((item: Lesson, idx) => (
             <LessonCard key={idx} lesson={item} collection={"practice"} />
           ))}
         </div>

@@ -1,13 +1,15 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
+import { MongoClient, Db } from "mongodb";
+import { Vocabulary } from "@/lib/data/lessons";
 
 export async function GET() {
   try {
-    const client = await clientPromise;
-    const db = client.db();
+    const client: MongoClient = await clientPromise;
+    const db: Db = client.db();
 
     const vocabulary = await db
-      .collection("vocabulary")
+      .collection<Vocabulary[]>("vocabulary")
       .find({})
       .sort({ order: 1 })
       .toArray();

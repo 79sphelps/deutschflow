@@ -1,21 +1,23 @@
 import clientPromise from "@/lib/mongodb";
+import { Lesson } from "@/lib/data/lessons";
+import { MongoClient, Db } from "mongodb";
 
 export async function getLessonsFromDB() {
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   return db
-    .collection("lessons")
+    .collection<Lesson[]>("lessons")
     .find({})
     .project({ _id: 0 })
     .toArray();
 }
 
 export async function getLessonFromDB(lessonId: string) {
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   return db
-    .collection("lessons")
+    .collection<Lesson>("lessons")
     .findOne({ lessonId: lessonId });
 }

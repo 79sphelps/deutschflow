@@ -2,6 +2,7 @@
 import { getLessonFromDB } from "@/lib/db/lessons";
 import Link from "next/link";
 import PageWrapper from "@/app/PageWrapper";
+import { Lesson } from "@/lib/data/lessons";
 
 export default async function LearnLessonPage({
   params,
@@ -9,7 +10,8 @@ export default async function LearnLessonPage({
   params: Promise<{ lessonId: string }>;
 }) {
   const { lessonId } = await params;
-  const lesson = await getLessonFromDB(lessonId);
+  const lesson: Lesson = await getLessonFromDB(lessonId) as unknown as Lesson;
+  
   return (
     <PageWrapper>
       <div className="space-y-6">

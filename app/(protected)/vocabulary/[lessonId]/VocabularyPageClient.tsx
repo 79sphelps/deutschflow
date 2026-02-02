@@ -7,7 +7,7 @@ import PageWrapper from "@/app/PageWrapper";
 export default function VocabularyPageClient({
   vocabulary,
 }: {
-  vocabulary: any;
+  vocabulary: Vocabulary[];
 }) {
   if (!vocabulary) {
     return <div>Loading vocabulary words for lesson...</div>;

@@ -18,7 +18,7 @@ export type ExerciseOption = Array<string>;
 export type Exercises = {
   type: string;
   question: string;
-  options: ExerciseOption;
+  options?: ExerciseOption;
   answer: string;
 }
 

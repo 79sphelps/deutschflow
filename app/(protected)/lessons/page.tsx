@@ -11,7 +11,7 @@ import PageWrapper from "@/app/PageWrapper";
 */
 
 export default async function LessonsPage() {
-  const lessons = (await getLessonsFromDB()) as Lesson[];
+  const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
 
   return (
     <PageWrapper>

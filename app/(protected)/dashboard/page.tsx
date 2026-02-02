@@ -1,16 +1,19 @@
 import clientPromise from "@/lib/mongodb";
 import { getUserFromSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import { MongoClient, Db } from "mongodb";
+import { Progress } from "@/hooks/useLessonProgress";
+import { User } from "@/hooks/useUser";
 
 export default async function DashboardPage() {
-  const user = await getUserFromSession();
+  const user: User = await getUserFromSession() as unknown as User;
   if (!user) redirect("/signin");
 
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   const progress = await db
-    .collection("lessonProgress")
+    .collection<Progress>("lessonProgress")
     .find({ userId: user._id })
     .toArray();
 

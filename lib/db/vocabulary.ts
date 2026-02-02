@@ -1,21 +1,23 @@
 import clientPromise from "@/lib/mongodb";
+import { MongoClient, Db } from "mongodb";
+import { Vocabulary } from "@/lib/data/lessons";
 
 export async function getAllVocabularyFromDB() {
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   return db
-    .collection("vocabulary")
+    .collection<Vocabulary[]>("vocabulary")
     .find({})
     .project({ _id: 0 })
     .toArray();
 }
 
 export async function getVocabularyFromDB(lessonId: string) {
-  const client = await clientPromise;
-  const db = client.db();
+  const client: MongoClient = await clientPromise;
+  const db: Db = client.db();
 
   return db
-    .collection("vocabulary")
+    .collection<Vocabulary>("vocabulary")
     .findOne({ lessonId: lessonId });
 }
