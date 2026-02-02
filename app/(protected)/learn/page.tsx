@@ -35,7 +35,7 @@ export default async function LearnPage() {
             <LessonCard
               key={lesson.lessonId}
               lesson={lesson}
-              collection={"lessons"}
+              collection={"learn"}
             />
           ))}
         </div>

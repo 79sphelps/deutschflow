@@ -1,6 +1,11 @@
 import { getBaseUrl } from "./getBaseUrl";
 import { LessonProgress } from "@/types/progress";
+import { Lesson } from "@/types/lessons";
+import { Exercise } from "@/types/exercises";
+import { Grammar } from "@/types/grammar";
 import { ApiResponse } from "@/types/api";
+import { Vocabulary } from "@/types/vocabulary";
+import { Progress } from "@/hooks/useLessonProgress";
 
 export async function getUserProgress(): Promise<LessonProgress[]> {
   const res = await fetch("/api/progress", {
@@ -26,7 +31,9 @@ export async function getLessons() {
     throw new Error("Failed to fetch lessons");
   }
 
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Lesson[]> = await res.json();
+  return json.data;
 }
 
 export async function getLesson(id: string) {
@@ -39,7 +46,9 @@ export async function getLesson(id: string) {
   if (!res.ok) {
     throw new Error("Failed to fetch lessons");
   }
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Lesson> = await res.json();
+  return json.data;
 }
 
 export async function getExercises(lessonId: string) {
@@ -53,7 +62,9 @@ export async function getExercises(lessonId: string) {
     throw new Error("Failed to fetch lessons");
   }
 
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Exercise[]> = await res.json();
+  return json.data;
 }
 
 export async function getGrammar(lessonId: string) {
@@ -67,7 +78,9 @@ export async function getGrammar(lessonId: string) {
     throw new Error("Failed to fetch lessons");
   }
 
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Grammar[]> = await res.json();
+  return json.data;
 }
 
 export async function getVocabulary(lessonId: string) {
@@ -81,7 +94,9 @@ export async function getVocabulary(lessonId: string) {
     throw new Error("Failed to fetch lessons");
   }
 
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Vocabulary> = await res.json();
+  return json.data;
 }
 
 export async function getAllVocabulary() {
@@ -95,7 +110,9 @@ export async function getAllVocabulary() {
     throw new Error("Failed to fetch lessons");
   }
 
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Vocabulary[]> = await res.json();
+  return json.data;
 }
 
 export async function getProgress(lessonId: string) {
@@ -109,5 +126,7 @@ export async function getProgress(lessonId: string) {
     throw new Error("Failed to fetch lessons");
   }
 
-  return res.json();
+  // return res.json();
+  const json: ApiResponse<Progress> = await res.json();
+  return json.data;
 }
