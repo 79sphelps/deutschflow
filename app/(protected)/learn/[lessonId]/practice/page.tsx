@@ -9,6 +9,6 @@ export default async function PracticePage({
   params: Promise<{ lessonId: string }>;
 }) {
   const { lessonId } = await params;
-  const data: Exercise = await getExercisesFromDB(lessonId);
+  const data: Exercise = await getExercisesFromDB(lessonId) as unknown as Exercise;
   return <PracticeClient lessonId={lessonId} exercise={data} />;
 }

@@ -1,57 +1,22 @@
-# 🇩🇪 DeutschFlow
+## German Learning App (Next.js)
 
-A modern, full-stack language learning platform built with **Next.js App Router**, **MongoDB**, and **custom authentication**.  
-DeutschFlow provides structured German lessons, vocabulary, practice exercises, and per-user progress tracking in a responsive, mobile-first UI.
+A frontend-focused language learning application built to demonstrate
+production-grade UI architecture using Next.js App Router.
 
----
+### Highlights
+- Next.js App Router with route-level loading & metadata
+- Client-side lesson progress persistence
+- Flashcard-based practice mode
+- Accessible, responsive UI
+- Clean component and hook architecture
 
-## Features
-
-- Custom authentication (signup, signin, signout)
-- Structured lessons with vocabulary & practice exercises
-- Per-user progress tracking (lesson + exercise level)
-- Achievements, streaks, and completion tracking
-- Practice scoring & completion feedback
-- Progress dashboard with charts
-- Fully responsive (mobile-first UX)
-- Server Components + Client Hooks (Next.js 16 compatible)
-
----
-
-## Tech Stack
-
-**Frontend**
-- Next.js 16 (App Router)
-- React (Server & Client Components)
+### Tech Stack
+- Next.js 14+
+- React 18
+- TypeScript
 - Tailwind CSS
-- Framer Motion (animations)
-- React Icons
+- Framer Motion (subtle UX polish)
 
-**Backend**
-- Next.js Route Handlers
-- MongoDB (native driver)
-- Custom session-based authentication
-- REST-style API routes
-
-**State & Data**
-- Client hooks for user & progress state
-- Server-side data fetching with auth boundaries
-- Local fallback persistence
-
----
-
-## Architecture Highlights
-
-- **Protected routes** using server-side auth checks
-- **Clean API layer** decoupled from UI components
-- **Per-user progress model** (lesson, exercise, score)
-- **Reusable hooks** (`useUser`, `useLessonProgress`)
-- **Mobile-first navigation** with custom breakpoints
-
----
-
-## 🚀 Getting Started
-
-```bash
-npm install
-npm run dev
+### Design Philosophy
+This project intentionally avoids unnecessary backend complexity to
+highlight frontend architecture, UX clarity, and performance.

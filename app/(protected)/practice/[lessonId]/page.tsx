@@ -1,6 +1,7 @@
 // import { getLesson } from "@/lib/api";
 import { getLessonFromDB } from "@/lib/db/lessons";
 import { getAllVocabularyFromDB } from "@/lib/db/vocabulary";
+import { Lesson } from "@/lib/data/lessons";
 import PracticePageClient from "./PracticePageClient";
 
 export default async function PracticePage({
@@ -10,7 +11,7 @@ export default async function PracticePage({
 }) {
   const { lessonId } = await params;
   const vocabulary = await getAllVocabularyFromDB();
-  const lesson = await getLessonFromDB(lessonId);
+  const lesson: Lesson = await getLessonFromDB(lessonId) as unknown as Lesson;
   return (
     <PracticePageClient
       lesson={lesson}

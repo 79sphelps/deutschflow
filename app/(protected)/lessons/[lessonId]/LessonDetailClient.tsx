@@ -24,7 +24,7 @@ export default function LessonDetailClient({
         <section>
           <h2 className="text-xl font-semibold">Flashcards</h2>
           <ul className="grid grid-cols-2 gap-4">
-            {vocabulary.map((v: any, idx) => (
+            {vocabulary.map((v: any, idx: number) => (
               <li key={idx} className="rounded border p-4">
                 <strong>{v.word}</strong>
                 <p className="text-gray-500">{v.translation}</p>

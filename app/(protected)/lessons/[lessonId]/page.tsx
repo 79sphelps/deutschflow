@@ -11,7 +11,7 @@ export default async function LessonDetailPage({
 }) {
   const { lessonId } = await params;
   const vocabulary = await getAllVocabularyFromDB();
-  const lesson: Lesson = await getLessonFromDB(lessonId);
+  const lesson: Lesson = await getLessonFromDB(lessonId) as unknown as Lesson;
   return (
     <LessonDetailClient
       lesson={lesson}

@@ -10,7 +10,7 @@ export default async function VocabularyPage({
   const allVocab = await getAllVocabulary();
   return (
     <VocabularyPageClient
-      vocabulary={allVocab.filter((v) => v.lessonId === lessonId)}
+      vocabulary={allVocab.filter((v: any) => v.lessonId === lessonId)}
     />
   );
 }
