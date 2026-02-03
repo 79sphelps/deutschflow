@@ -1,7 +1,6 @@
-import { Lesson } from "@/types/lessons";
-// import { getLessons } from "@/lib/api";
-import { getLessonsFromDB } from "@/lib/db/lessons";
-import LessonCard from "@/components/lessons/LessonCard";
+import { Suspense } from "react";
+import ProgressSkeleton from "@/app/ProgressSkeleton";
+import LessonData from "./LessonData";
 import PageWrapper from "@/app/PageWrapper";
 
 /*
@@ -11,19 +10,16 @@ import PageWrapper from "@/app/PageWrapper";
 */
 
 export default async function LessonsPage() {
-  // const lessons: Lesson[] = (await getLessonsFromDB()) as Lesson[];
-  const lessons: Lesson[] = await getLessonsFromDB();
-
   return (
     <PageWrapper>
       <section className="space-y-6 border-blue-600 border-2 flex flex-col justify-center items-center p-5 rounded-2xl">
         <div className="space-y-6">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
             Lessons
           </h1>
-          {lessons.map((lesson: Lesson, idx) => (
-            <LessonCard key={idx} lesson={lesson} collection={"lessons"} />
-          ))}
+          <Suspense fallback={<ProgressSkeleton />}>
+            <LessonData />
+          </Suspense>
         </div>
       </section>
     </PageWrapper>

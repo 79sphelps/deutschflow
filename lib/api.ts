@@ -112,6 +112,9 @@ export async function getAllVocabulary() {
 
   // return res.json();
   const json: ApiResponse<Vocabulary[]> = await res.json();
+
+  console.log('json: ', json);
+
   return json.data;
 }
 

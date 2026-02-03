@@ -3,6 +3,7 @@
 import { Lesson } from "@/types/lessons";
 import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
+import Link from "next/link";
 
 export default function LessonDetailClient({
   lesson,
@@ -52,6 +53,13 @@ export default function LessonDetailClient({
             ))}
           </ul>
         </section>
+
+        <Link
+          href={`/lessons`}
+          className="block text-center text-blue-600 underline"
+        >
+          Back to Lessons Area
+        </Link>
       </article>
     </PageWrapper>
   );

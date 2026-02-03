@@ -11,8 +11,9 @@ export default async function PracticePage({
   params: Promise<{ lessonId: string }>;
 }) {
   const { lessonId } = await params;
-  const vocabulary: Vocabulary[] = await getAllVocabularyFromDB() as unknown as Vocabulary[];
-  const lesson: Lesson = await getLessonFromDB(lessonId) as unknown as Lesson;
+  const vocabulary: Vocabulary[] =
+    (await getAllVocabularyFromDB()) as unknown as Vocabulary[];
+  const lesson: Lesson = (await getLessonFromDB(lessonId)) as unknown as Lesson;
   return (
     <PracticePageClient
       lesson={lesson}

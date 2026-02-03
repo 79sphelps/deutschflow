@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import { useLessonProgress } from "@/hooks/useLessonProgress";
 import { Lesson } from "@/types/lessons";
 import { CheckCircle, Circle, ArrowRight } from "lucide-react";
 import { ProgressRing } from "@/components/ProgressRing";
