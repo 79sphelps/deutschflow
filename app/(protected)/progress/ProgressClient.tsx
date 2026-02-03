@@ -18,7 +18,7 @@ export default function ProgressClient({
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6">
+    <div className="max-w-5xl mx-auto p-1">
       <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-6 text-center">
         {name}, Here is Your Progress
       </h1>

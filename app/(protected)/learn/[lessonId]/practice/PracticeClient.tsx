@@ -137,7 +137,7 @@ export default function PracticeClient({
         {!submitted ? (
           <button
             onClick={handleSubmit}
-            className="bg-blue-600 text-white px-4 py-2 rounded min-h-[44px] min-w-[44px]"
+            className="bg-blue-600 text-white px-4 py-2 rounded min-h-[44px] min-w-[44px] w-full"
           >
             Submit
           </button>

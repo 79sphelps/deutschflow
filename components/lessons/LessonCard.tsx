@@ -15,7 +15,7 @@ export default function LessonCard({
     <motion.div
       whileHover={{ scale: 1.03 }}
       transition={{ type: "spring", stiffness: 300 }}
-      className="bg-white rounded-xl shadow hover:shadow-lg transition"
+      className="bg-gray-100 rounded-xl shadow hover:shadow-lg transition"
     >
       <Link href={`/${collection}/${lesson.lessonId}`} className="block p-6">
         <h3 className="text-lg font-semibold mb-2">{lesson.title}</h3>

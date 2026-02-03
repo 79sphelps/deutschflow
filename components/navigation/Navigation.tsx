@@ -45,6 +45,8 @@ export default function Navbar() {
             🇩🇪 Deutsch<span className="text-blue-600">Flow</span>
           </Link>
 
+          { user && <span>Hello, { user.name }</span> }
+
           {/* DESKTOP NAV */}
           {/* <div className="hidden sm:flex items-center gap-6"> */}
           <div className="hidden min-[830px]:flex items-center gap-6">
