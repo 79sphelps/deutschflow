@@ -34,9 +34,10 @@ export default function SignUpPage() {
     <section className="space-y-6 border-blue-600 border-2 flex flex-col justify-center items-center p-5 rounded-2xl">
       <form
         onSubmit={handleSubmit}
+        aria-labelledby="signup-heading"
         className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm animate-fadeIn"
       >
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
+        <h1 id="signup-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
           Willkommen 🇩🇪
         </h1>
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
@@ -48,6 +49,7 @@ export default function SignUpPage() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          aria-required="true"
           className="border rounded-lg p-3 w-full mb-3 focus:ring-2 focus:ring-red-400"
         />
         <input
@@ -55,6 +57,7 @@ export default function SignUpPage() {
           required
           placeholder="Email"
           value={email}
+          aria-required="true"
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
@@ -63,6 +66,7 @@ export default function SignUpPage() {
           type="password"
           placeholder="Password"
           value={password}
+          aria-required="true"
           onChange={(e) => setPassword(e.target.value)}
         />
 

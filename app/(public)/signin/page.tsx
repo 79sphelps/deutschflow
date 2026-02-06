@@ -33,10 +33,11 @@ export default function SignInPage() {
   return (
     <section className="space-y-6 border-blue-600 border-2 flex flex-col justify-center items-center p-5 rounded-2xl">
       <form
+        aria-labelledby="signin-heading"
         onSubmit={handleSignIn}
         className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm animate-fadeIn"
       >
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
+        <h1 id="signin-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
           Willkommen 🇩🇪
         </h1>
         <input
@@ -44,6 +45,7 @@ export default function SignInPage() {
           placeholder="Email"
           className="border rounded-lg p-3 w-full mb-3 focus:ring-2 focus:ring-red-400"
           required
+          aria-required="true"
         />
         <input
           name="password"
@@ -51,6 +53,7 @@ export default function SignInPage() {
           placeholder="Password"
           className="border rounded-lg p-3 w-full mb-4 focus:ring-2 focus:ring-red-400"
           required
+          aria-required="true"
         />
         <button
           disabled={loading}

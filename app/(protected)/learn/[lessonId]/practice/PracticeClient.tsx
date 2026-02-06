@@ -15,7 +15,7 @@ export function fireConfetti() {
   });
 }
 
-const correctSound = "/sounds/correct.mp3";
+// const correctSound = "/sounds/correct.mp3";
 const wrongSound = "/sounds/wrong.mp3";
 const completeSound = "/sounds/complete.mp3";
 
@@ -32,12 +32,10 @@ export default function PracticeClient({
 }) {
   const exercises: Exercises[] = exercise.exercises;
   const { saveProgress, loading } = useLessonProgress(lessonId);
-
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
-
-  const [playCorrect] = useSound(correctSound, { volume: 0.4 });
+  // const [playCorrect] = useSound(correctSound, { volume: 0.4 });
   const [playWrong] = useSound(wrongSound, { volume: 0.4 });
   const [playComplete] = useSound(completeSound, { volume: 0.5 });
 
@@ -76,62 +74,68 @@ export default function PracticeClient({
         </h1>
 
         {exercises.map((ex, idx) => (
-          <div key={idx} className="mb-6">
-            <p className="font-medium mb-2">
-              {idx + 1}. {ex.question}
-            </p>
+          <fieldset className="space-y-2" key={idx}>
+            <legend className="font-medium">{ex.question}</legend>
 
-            {/* Multiple choice */}
-            {ex.options ? (
-              <div className="space-y-1">
-                {ex.options.map((opt, optIdx) => (
-                  <label key={optIdx} className="block cursor-pointer">
-                    <input
-                      type="radio"
-                      name={`question-${idx}`} // unique per question
-                      value={opt}
-                      checked={answers[idx] === opt}
-                      onChange={() =>
-                        setAnswers((prev) => ({
-                          ...prev,
-                          [idx]: opt,
-                        }))
-                      }
-                      className="mr-2"
-                    />
-                    {opt}
-                  </label>
-                ))}
-              </div>
-            ) : (
-              /* Fill in */
-              <input
-                className="border p-2 w-full mt-2"
-                value={answers[idx] ?? ""}
-                onChange={(e) =>
-                  setAnswers((prev) => ({
-                    ...prev,
-                    [idx]: e.target.value,
-                  }))
-                }
-              />
-            )}
-
-            {/* Feedback */}
-            {submitted && (
-              <p
-                className={`mt-1 ${
-                  answers[idx]?.trim() === ex.answer
-                    ? "text-green-600"
-                    : "text-red-600"
-                }`}
-              >
-                {answers[idx]?.trim() === ex.answer
-                  ? "Correct"
-                  : `Correct answer: ${ex.answer}`}
+            <div className="mb-6">
+              <p className="font-medium mb-2">
+                {idx + 1}. {ex.question}
               </p>
-            )}
-          </div>
+
+              {/* Multiple choice */}
+              {ex.options ? (
+                <div className="space-y-1">
+                  {ex.options.map((opt, optIdx) => (
+                    // <label key={optIdx} className="block cursor-pointer">
+                    <label key={optIdx} className="flex items-center gap-2">
+                      <input
+                        type="radio"
+                        name={`question-${idx}`} // unique per question
+                        value={opt}
+                        checked={answers[idx] === opt}
+                        onChange={() =>
+                          setAnswers((prev) => ({
+                            ...prev,
+                            [idx]: opt,
+                          }))
+                        }
+                        // className="mr-2"
+                        className="accent-blue-600 mr-2"
+                      />
+                      {opt}
+                    </label>
+                  ))}
+                </div>
+              ) : (
+                /* Fill in */
+                <input
+                  className="border p-2 w-full mt-2"
+                  value={answers[idx] ?? ""}
+                  onChange={(e) =>
+                    setAnswers((prev) => ({
+                      ...prev,
+                      [idx]: e.target.value,
+                    }))
+                  }
+                />
+              )}
+
+              {/* Feedback */}
+              {submitted && (
+                <p
+                  className={`mt-1 ${
+                    answers[idx]?.trim() === ex.answer
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }`}
+                >
+                  {answers[idx]?.trim() === ex.answer
+                    ? "Correct"
+                    : `Correct answer: ${ex.answer}`}
+                </p>
+              )}
+            </div>
+          </fieldset>
         ))}
 
         {!submitted ? (

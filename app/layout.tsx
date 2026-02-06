@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "A modern, structured German learning app focused on clarity, progress, and real-world usage.",
+  viewport: "width=device-width, initial-scale=1"
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

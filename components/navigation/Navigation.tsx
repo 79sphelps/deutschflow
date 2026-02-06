@@ -29,18 +29,22 @@ export default function Navbar() {
   const router = useRouter();
   const { user } = useUser();
   const { dark, toggle } = useTheme();
-
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <nav 
+      role="navigation"
+      aria-label="Main navigation"
+      className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b dark:border-gray-800">
+      {/* <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between"> */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
         {/* TOP BAR */}
         <div className="h-14 sm:h-16 flex items-center justify-between">
           {/* LOGO */}
           <Link
             href="/"
             className="text-lg sm:text-xl font-bold tracking-tight"
+            aria-label="DeutschFlow home"
           >
             🇩🇪 Deutsch<span className="text-blue-600">Flow</span>
           </Link>
@@ -110,6 +114,8 @@ export default function Navbar() {
             onClick={() => setOpen((o) => !o)}
             // className="sm:hidden min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 dark:hover:bg-gray-700"
             className="min-[830px]:hidden min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            area-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -126,7 +132,8 @@ export default function Navbar() {
               // className="sm:hidden overflow-hidden border-t dark:border-gray-800"
               className="min-[830px]:hidden overflow-hidden border-t dark:border-gray-800"
             >
-              <div className="py-4 space-y-2">
+              {/* <div className="py-4 space-y-2"> */}
+              <div className="flex flex-col gap-2 p-4 space-y-2">
                 {navItems.map(({ href, label, icon: Icon }) => {
                   const active = pathname.startsWith(href);
 

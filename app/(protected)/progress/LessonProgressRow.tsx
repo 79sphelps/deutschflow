@@ -42,6 +42,15 @@ export default function LessonProgressRow({
         <div className="hidden sm:block">s
           <ProgressRing value={progress?.score ?? 0} />
         </div>
+        <div role="progressbar"
+          aria-valuenow={score}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        >
+          <span className="sr-only">
+            {score}% completed
+          </span>
+        </div>
       </div>
 
       <Link
