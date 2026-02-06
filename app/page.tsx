@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Headings from "@/components/ui/Headings";
+
 
 export default function HomePage() {
   return (
@@ -23,9 +25,9 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
         className="max-w-4xl mx-auto px-6 py-32 text-center"
       >
-        <h1 className="font-bold mb-6 text-xl sm:text-2xl md:text-3xl lg:text-3xl">
+        <Headings>
           Learn German the <span className="text-blue-600">modern</span> way
-        </h1>
+        </Headings>
         <p className="text-gray-700 text-lg mb-8">
           Interactive lessons, smart practice, real progress.
         </p>

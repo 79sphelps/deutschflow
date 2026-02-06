@@ -3,6 +3,8 @@ import ProgressSkeleton from "@/app/ProgressSkeleton";
 import LearnData from "./LearnData";
 import type { Metadata } from "next";
 import PageWrapper from "@/app/PageWrapper";
+import Section from "@/components/ui/Section";
+import Headings from "@/components/ui/Headings";
 
 export const metadata: Metadata = {
   title: "Lessons",
@@ -21,16 +23,16 @@ export default async function LearnPage() {
 
   return (
     <PageWrapper>
-      <section className="space-y-6 border-blue-600 border-2 flex flex-col justify-center items-center p-5 rounded-2xl">
+      <Section>
         <div className="space-y-6">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+          <Headings>
             Start Learning
-          </h1>
+          </Headings>
           <Suspense fallback={<ProgressSkeleton />}>
             <LearnData />
           </Suspense>
         </div>
-      </section>
+      </Section>
     </PageWrapper>
   );
 }

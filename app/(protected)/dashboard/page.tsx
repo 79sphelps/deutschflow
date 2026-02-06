@@ -3,6 +3,8 @@ import { getUserFromSession } from "@/lib/auth";
 import { getLessonProgressByUserFromDB } from "@/lib/db/progress";
 import { redirect } from "next/navigation";
 import { User } from "@/hooks/useUser";
+import Section from "@/components/ui/Section";
+import Headings from "@/components/ui/Headings";
 
 export default async function DashboardPage() {
   const user: User = await getUserFromSession() as unknown as User;
@@ -17,12 +19,12 @@ export default async function DashboardPage() {
           Sign out
         </button>
       </form>
-      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-4">
+      <Headings>
         Welcome, { user.name }
-      </h1>
-      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-4">
+      </Headings>
+      <Headings>
         Here is Your Progress
-      </h1>
+      </Headings>
       {progressByLessonId.map((p) => (
         <div key={p.lessonId} className="border p-4 mb-2 rounded">
           <strong>{p.lessonId}</strong>

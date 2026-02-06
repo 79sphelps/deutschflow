@@ -2,6 +2,8 @@ import { Suspense } from "react";
 import ProgressSkeleton from "@/app/ProgressSkeleton";
 import LessonData from "./LessonData";
 import PageWrapper from "@/app/PageWrapper";
+import Section from "@/components/ui/Section";
+import Headings from "@/components/ui/Headings";
 
 /*
 - No client-side state
@@ -12,16 +14,16 @@ import PageWrapper from "@/app/PageWrapper";
 export default async function LessonsPage() {
   return (
     <PageWrapper>
-      <section className="space-y-6 border-blue-600 border-2 flex flex-col justify-center items-center p-5 rounded-2xl">
+      <Section>
         <div className="space-y-6">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center">
+          <Headings>
             Lessons
-          </h1>
+          </Headings>
           <Suspense fallback={<ProgressSkeleton />}>
             <LessonData />
           </Suspense>
         </div>
-      </section>
+      </Section>
     </PageWrapper>
   );
 }
