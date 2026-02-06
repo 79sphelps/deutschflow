@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Input from "@/components/ui/Input";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -37,37 +38,36 @@ export default function SignUpPage() {
         aria-labelledby="signup-heading"
         className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-sm animate-fadeIn"
       >
-        <h1 id="signup-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
+        <h1
+          id="signup-heading"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6"
+        >
           Willkommen 🇩🇪
         </h1>
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
           Create your German learning account
         </h1>
 
-        <input
+        <Input
+          name="name"
           placeholder="Name"
-          value={name}
+          type="text"
           onChange={(e) => setName(e.target.value)}
-          required
-          aria-required="true"
-          className="border rounded-lg p-3 w-full mb-3 focus:ring-2 focus:ring-red-400"
+          value={name}
         />
-        <input
-          className="border rounded-lg p-3 w-full mb-3 focus:ring-2 focus:ring-red-400"
-          required
+        <Input
+          name="email"
           placeholder="Email"
-          value={email}
-          aria-required="true"
+          type="text"
           onChange={(e) => setEmail(e.target.value)}
+          value={email}
         />
-        <input
-          className="border rounded-lg p-3 w-full mb-4 focus:ring-2 focus:ring-red-400"
-          required
-          type="password"
+        <Input
+          name="password"
           placeholder="Password"
-          value={password}
-          aria-required="true"
+          type="text"
           onChange={(e) => setPassword(e.target.value)}
+          value={password}
         />
 
         <button

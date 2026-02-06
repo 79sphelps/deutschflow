@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Input from "@/components/ui/Input";
 
 export default function SignInPage() {
   const router = useRouter();
@@ -40,21 +41,10 @@ export default function SignInPage() {
         <h1 id="signin-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
           Willkommen 🇩🇪
         </h1>
-        <input
-          name="email"
-          placeholder="Email"
-          className="border rounded-lg p-3 w-full mb-3 focus:ring-2 focus:ring-red-400"
-          required
-          aria-required="true"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          className="border rounded-lg p-3 w-full mb-4 focus:ring-2 focus:ring-red-400"
-          required
-          aria-required="true"
-        />
+
+        <Input name="email" placeholder="Email" type="text" />
+        <Input name="password" placeholder="Password" type="password" />
+        
         <button
           disabled={loading}
           className="min-h-[44px] min-w-[44px] w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-all active:scale-[0.98]"
