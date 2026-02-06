@@ -49,10 +49,10 @@ export default function PracticePageClient({
           </p>
         )}
         <div className="flex justify-center items-center gap-2">
-          <button className="min-h-[44px] min-w-[44px]" onClick={prev}>
+          <button onClick={prev}>
             Prev
           </button>
-          <button className="min-h-[44px] min-w-[44px]" onClick={next}>
+          <button onClick={next}>
             Next
           </button>
         </div>

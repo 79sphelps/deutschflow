@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Input from "@/components/ui/Input";
+import Headings from "@/components/ui/Headings";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -44,9 +45,9 @@ export default function SignUpPage() {
         >
           Willkommen 🇩🇪
         </h1>
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-center mb-6">
+        <Headings>
           Create your German learning account
-        </h1>
+        </Headings>
 
         <Input
           name="name"
@@ -72,7 +73,7 @@ export default function SignUpPage() {
 
         <button
           disabled={loading}
-          className="min-h-[44px] min-w-[44px] w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-red-700 transition-all active:scale-[0.98]"
+          className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-red-700 transition-all active:scale-[0.98]"
         >
           {loading ? "Creating account..." : "Create Account"}
         </button>

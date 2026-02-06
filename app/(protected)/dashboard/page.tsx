@@ -15,7 +15,7 @@ export default async function DashboardPage() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <form action="/api/auth/signout" method="POST">
-        <button className="text-sm text-red-600 min-h-[44px] min-w-[44px]">
+        <button className="text-sm text-red-600">
           Sign out
         </button>
       </form>

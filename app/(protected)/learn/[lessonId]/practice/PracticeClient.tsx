@@ -6,6 +6,7 @@ import { Exercise, Exercises } from "@/types/exercises";
 import PageWrapper from "@/app/PageWrapper";
 import useSound from "use-sound";
 import confetti from "canvas-confetti";
+import Headings from "@/components/ui/Headings";
 
 export function fireConfetti() {
   confetti({
@@ -69,9 +70,9 @@ export default function PracticeClient({
   return (
     <PageWrapper>
       <div className="max-w-3xl mx-auto p-6">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-6">
+        <Headings>
           Practice
-        </h1>
+        </Headings>
 
         {exercises.map((ex, idx) => (
           <fieldset className="space-y-2" key={idx}>
@@ -141,7 +142,7 @@ export default function PracticeClient({
         {!submitted ? (
           <button
             onClick={handleSubmit}
-            className="bg-blue-600 text-white px-4 py-2 rounded min-h-[44px] min-w-[44px] w-full"
+            className="bg-blue-600 text-white px-4 py-2 rounded w-full"
           >
             Submit
           </button>

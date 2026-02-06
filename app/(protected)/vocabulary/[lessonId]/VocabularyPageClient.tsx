@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
+import Headings from "@/components/ui/Headings";
 
 export default function VocabularyPageClient({
   vocabulary,
@@ -17,9 +18,9 @@ export default function VocabularyPageClient({
     <PageWrapper>
       <article className="space-y-8">
         <header>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold">
+          <Headings>
             Vocabulary for {vocabulary && vocabulary[0].lessonId}
-          </h1>
+          </Headings>
         </header>
 
         {/* Vocabulary */}

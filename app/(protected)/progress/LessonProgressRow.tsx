@@ -39,7 +39,7 @@ export default function LessonProgressRow({
                 : "Not started"}
           </p>
         </div>
-        <div className="hidden sm:block">s
+        <div className="hidden sm:block">
           <ProgressRing value={progress?.score ?? 0} />
         </div>
         <div role="progressbar"

@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* LOGO */}
           <Link
             href="/"
-            className="text-lg sm:text-xl font-bold tracking-tight"
+            className="text-lg sm:text-xl font-bold tracking-tight flex justify-center items-center"
             aria-label="DeutschFlow home"
           >
             🇩🇪 Deutsch<span className="text-blue-600">Flow</span>
@@ -53,7 +53,7 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           {/* <div className="hidden sm:flex items-center gap-6"> */}
-          <div className="hidden min-[830px]:flex items-center gap-6">
+          <div className="hidden min-[930px]:flex items-center gap-6">
             {navItems.map(({ href, label, icon: Icon }) => {
               const active = pathname.startsWith(href);
 
@@ -90,7 +90,7 @@ export default function Navbar() {
             {/* THEME TOGGLE */}
             <button
               onClick={toggle}
-              className="min-h-[44px] min-w-[44px] p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
             >
               {dark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
@@ -113,7 +113,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen((o) => !o)}
             // className="sm:hidden min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 dark:hover:bg-gray-700"
-            className="min-[830px]:hidden min-h-[44px] min-w-[44px] flex items-center justify-center rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+            className="min-[930px]:hidden flex items-center justify-center rounded hover:bg-gray-200 dark:hover:bg-gray-700"
             area-label="Toggle menu"
             aria-expanded={open}
           >
@@ -130,7 +130,7 @@ export default function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25 }}
               // className="sm:hidden overflow-hidden border-t dark:border-gray-800"
-              className="min-[830px]:hidden overflow-hidden border-t dark:border-gray-800"
+              className="min-[930px]:hidden overflow-hidden border-t dark:border-gray-800"
             >
               {/* <div className="py-4 space-y-2"> */}
               <div className="flex flex-col gap-2 p-4 space-y-2">
@@ -159,7 +159,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between px-4 pt-3 border-t dark:border-gray-800">
                   <button
                     onClick={toggle}
-                    className="min-h-[44px] min-w-[44px] p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+                    className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
                   >
                     {dark ? <Sun size={18} /> : <Moon size={18} />}
                   </button>

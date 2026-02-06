@@ -4,6 +4,7 @@ import { Lesson } from "@/types/lessons";
 import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
 import Link from "next/link";
+import Headings from "@/components/ui/Headings";
 
 export default function LessonDetailClient({
   lesson,
@@ -16,9 +17,9 @@ export default function LessonDetailClient({
     <PageWrapper>
       <article className="space-y-8">
         <header>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold">
+          <Headings>
             {lesson.title}
-          </h1>
+          </Headings>
           <p className="text-gray-600">{lesson.description}</p>
         </header>
 
