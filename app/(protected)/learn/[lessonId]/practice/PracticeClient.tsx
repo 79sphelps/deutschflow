@@ -4,7 +4,7 @@ import { useLessonProgress } from "@/hooks/useLessonProgress";
 import { useState } from "react";
 import { Exercise, Exercises } from "@/types/exercises";
 import PageWrapper from "@/app/PageWrapper";
-import useSound from "use-sound";
+// import useSound from "use-sound";            // REMOVED DUE TO RENDER.COM SIZE CONSTRAINTS
 import confetti from "canvas-confetti";
 import Headings from "@/components/ui/Headings";
 
@@ -16,9 +16,9 @@ export function fireConfetti() {
   });
 }
 
-// const correctSound = "/sounds/correct.mp3";
-const wrongSound = "/sounds/wrong.mp3";
-const completeSound = "/sounds/complete.mp3";
+// const correctSound = "/sounds/correct.mp3";  // REMOVED DUE TO RENDER.COM SIZE CONSTRAINTS
+// const wrongSound = "/sounds/wrong.mp3";      // REMOVED DUE TO RENDER.COM SIZE CONSTRAINTS
+// const completeSound = "/sounds/complete.mp3";// REMOVED DUE TO RENDER.COM SIZE CONSTRAINTS
 
 type AnswerMap = {
   [exerciseIndex: number]: string;
@@ -37,8 +37,8 @@ export default function PracticeClient({
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
   // const [playCorrect] = useSound(correctSound, { volume: 0.4 });
-  const [playWrong] = useSound(wrongSound, { volume: 0.4 });
-  const [playComplete] = useSound(completeSound, { volume: 0.5 });
+  // const [playWrong] = useSound(wrongSound, { volume: 0.4 });
+  // const [playComplete] = useSound(completeSound, { volume: 0.5 });
 
   if (loading) {
     return <p className="p-6">Loading progress…</p>;
@@ -57,9 +57,9 @@ export default function PracticeClient({
 
     if (calculatedScore >= 70) {
       fireConfetti();
-      playComplete();
+      // playComplete();
     } else {
-      playWrong();
+      // playWrong();
     }
 
     setScore(calculatedScore);
