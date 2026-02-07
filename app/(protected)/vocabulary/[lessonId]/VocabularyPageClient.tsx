@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
 import Headings from "@/components/ui/Headings";
+import NavigationButton from "@/components/ui/NavigationButton";
 
 export default function VocabularyPageClient({
   vocabulary,
@@ -35,13 +36,11 @@ export default function VocabularyPageClient({
             ))}
           </ul>
         </section>
-
-        <Link
-          href={`/vocabulary`}
-          className="block text-center text-blue-600 underline"
-        >
-          Back to Vocabulary Review Area
-        </Link>
+        <div className="flex flex-row justify-center items-center">
+          <NavigationButton>
+            <Link href={`/vocabulary`}>Back to Vocabulary Review Area</Link>
+          </NavigationButton>
+        </div>
       </article>
     </PageWrapper>
   );

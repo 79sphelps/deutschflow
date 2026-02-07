@@ -7,6 +7,7 @@ import PageWrapper from "@/app/PageWrapper";
 // import useSound from "use-sound";            // REMOVED DUE TO RENDER.COM SIZE CONSTRAINTS
 import confetti from "canvas-confetti";
 import Headings from "@/components/ui/Headings";
+import NavigationButton from "@/components/ui/NavigationButton";
 
 export function fireConfetti() {
   confetti({
@@ -70,9 +71,7 @@ export default function PracticeClient({
   return (
     <PageWrapper>
       <div className="max-w-3xl mx-auto p-6">
-        <Headings>
-          Practice
-        </Headings>
+        <Headings>Practice</Headings>
 
         {exercises.map((ex, idx) => (
           <fieldset className="space-y-2" key={idx}>
@@ -97,7 +96,7 @@ export default function PracticeClient({
                         onChange={() =>
                           setAnswers((prev) => ({
                             ...prev,
-                            [idx]: opt,
+                            [idx]: opt.charAt(0).toUpperCase(),
                           }))
                         }
                         // className="mr-2"
@@ -139,19 +138,16 @@ export default function PracticeClient({
           </fieldset>
         ))}
 
-        {!submitted ? (
-          <button
-            onClick={handleSubmit}
-            className="bg-blue-600 text-white px-4 py-2 rounded w-full"
-          >
-            Submit
-          </button>
-        ) : (
-          <>
-            <p className="mt-4 font-bold text-lg">Score: {score}%</p>
-            <p className="mt-2 text-green-600">Lesson completed ✔</p>
-          </>
-        )}
+        <div className="flex flex-row justify-center items-center">
+          {!submitted ? (
+            <NavigationButton onClick={handleSubmit}>Submit</NavigationButton>
+          ) : (
+            <div className="flex flex-col justify-center items-center text-center">
+              <p className="mt-4 font-bold text-lg">Score: {score}%</p>
+              <p className="mt-2 text-green-600">Lesson completed ✔</p>
+            </div>
+          )}
+        </div>
       </div>
     </PageWrapper>
   );

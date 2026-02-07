@@ -5,6 +5,7 @@ import { Lesson } from "@/types/lessons";
 import { Vocabulary } from "@/types/vocabulary";
 import Link from "next/link";
 import PageWrapper from "@/app/PageWrapper";
+import NavigationButton from "@/components/ui/NavigationButton";
 
 export default function PracticePageClient({
   lesson,
@@ -35,7 +36,7 @@ export default function PracticePageClient({
       <div className="space-y-4">
         <div
           onClick={flip}
-          className="cursor-pointer rounded-xl border p-8 text-center text-xl bg-white shadow"
+          className="cursor-pointer rounded-xl border p-8 text-center text-4xl bg-white shadow "
         >
           {vocabulary && showBack
             ? vocabulary[index].translation
@@ -49,19 +50,18 @@ export default function PracticePageClient({
           </p>
         )}
         <div className="flex justify-center items-center gap-2">
-          <button onClick={prev}>
+          <button className="border border-slate-600 rounded-lg px-5 hover:bg-slate-200 transition-all active:scale-[0.98]" onClick={prev}>
             Prev
           </button>
-          <button onClick={next}>
+          <button className="border border-slate-600 rounded-lg px-5 hover:bg-slate-200 transition-all active:scale-[0.98]" onClick={next}>
             Next
           </button>
         </div>
-        <Link
-          href={`/practice`}
-          className="block text-center text-blue-600 underline"
-        >
-          Back to Practice Area
-        </Link>
+        <div className="flex flex-row justify-center items-center">
+          <NavigationButton>
+            <Link href={`/practice`}>Back to Practice Area</Link>
+          </NavigationButton>
+        </div>
       </div>
     </PageWrapper>
   );

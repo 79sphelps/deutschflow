@@ -45,10 +45,6 @@ export default function SignInPage() {
         <Input name="email" placeholder="Email" type="text" />
         <Input name="password" placeholder="Password" type="password" />
         
-        {/* <button
-          disabled={loading}
-          className="min-h-[44px] min-w-[44px] w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-all active:scale-[0.98]"
-        > */}
         <button
           disabled={loading}
           className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-all active:scale-[0.98]"

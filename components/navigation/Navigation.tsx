@@ -27,7 +27,7 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const { user } = useUser();
+  const { user, setUser } = useUser();
   const { dark, toggle } = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -102,6 +102,7 @@ export default function Navbar() {
                 onClick={async () => {
                   await fetch("/api/auth/signout", { method: "POST" });
                   router.push("/signin");
+                  setUser(null);
                 }}
               >
                 Sign out
@@ -170,6 +171,7 @@ export default function Navbar() {
                       onClick={async () => {
                         await fetch("/api/auth/signout", { method: "POST" });
                         router.push("/signin");
+                        setUser(null);
                       }}
                     >
                       Sign out

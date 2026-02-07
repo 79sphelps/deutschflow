@@ -20,5 +20,5 @@ export function useUser() {
       .finally(() => setLoading(false));
   }, []);
 
-  return { user, loading };
+  return { user, loading, setUser };
 }

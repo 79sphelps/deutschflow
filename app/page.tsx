@@ -30,12 +30,11 @@ export default function HomePage() {
         <p className="text-gray-700 text-lg mb-8">
           Interactive lessons, smart practice, real progress.
         </p>
-        <Link
-          href="/learn"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition"
-        >
-          Start Learning →
-        </Link>
+        <div className="flex flex-row justify-center items-center">
+          <button className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all active:scale-[0.98]">
+            <Link href={`/learn`}>Start Learning →</Link>
+          </button>
+        </div>
       </motion.div>
     </section>
   );

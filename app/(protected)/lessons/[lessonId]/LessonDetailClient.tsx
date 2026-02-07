@@ -5,6 +5,7 @@ import { Vocabulary } from "@/types/vocabulary";
 import PageWrapper from "@/app/PageWrapper";
 import Link from "next/link";
 import Headings from "@/components/ui/Headings";
+import NavigationButton from "@/components/ui/NavigationButton";
 
 export default function LessonDetailClient({
   lesson,
@@ -17,9 +18,7 @@ export default function LessonDetailClient({
     <PageWrapper>
       <article className="space-y-8">
         <header>
-          <Headings>
-            {lesson.title}
-          </Headings>
+          <Headings>{lesson.title}</Headings>
           <p className="text-gray-600">{lesson.description}</p>
         </header>
 
@@ -55,12 +54,18 @@ export default function LessonDetailClient({
           </ul>
         </section>
 
-        <Link
+        {/* <Link
           href={`/lessons`}
           className="block text-center text-blue-600 underline"
         >
           Back to Lessons Area
-        </Link>
+        </Link> */}
+
+        <div className="flex flex-row justify-center items-center">
+          <NavigationButton>
+            <Link href={`/lessons`}>Back to Lessons Area</Link>
+          </NavigationButton>
+        </div>
       </article>
     </PageWrapper>
   );

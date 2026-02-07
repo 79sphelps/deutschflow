@@ -19,7 +19,7 @@ export default async function LearnLessonPage({
         <Headings>{lesson?.title}</Headings>
         <p className="text-center">{lesson?.description}</p>
         <div className="flex flex-row justify-center items-center">
-          <button className="w-100 sm:w-1/3 md:w-1/3 lg:w-1/3 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all active:scale-[0.98]">
+          <button className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all active:scale-[0.98]">
             <Link
               href={`/learn/${lesson?.lessonId}/practice`}
               // className="rounded bg-blue-600 px-4 py-2 text-white w-50"
